@@ -1,27 +1,43 @@
-const clear = document.getElementById('clear');
-const plusMinus = document.getElementById('plus-minus');
-const percent = document.getElementById('percent');
-const divide = document.getElementById('divide');
-const multiply = document.getElementById('multiply');
-const subtraction = document.getElementById('subtraction');
-const addition = document.getElementById('addition');
-const decimal = document.getElementById('decimal');
-const equals = document.getElementById('equals');
-const numButton = document.getElementById('num-button');
+const buttonPanel = document.querySelector('[data-button-panel]');
+const buttons = Array.from(buttonPanel.children);
 
-let otherButtons = [clear, plusMinus, percent, divide, multiply, subtraction, addition, decimal, equals];
+let displayPrimary = document.querySelector('[data-display-primary]');
+let displaySecondary = document.querySelector('[data-displays-secondary]');
 
-let opp1 = document.getElementById('opp1');
-let opp2 = document.getElementById('opp2');
-
-numButton.forEach(button => {
+buttons.forEach(button => {
     button.addEventListener('click', () => {
 
-    });
-});
 
-otherButtons.forEach(button => {
-    button.addEventListener('click', () => {
+    
+        //number button & decimal code
+        if(displayPrimary.innerText == '') {
+            if(event.target.innerText == '.') {
+                displayPrimary.innerText = '0.'
+            } else {
+                displayPrimary.innerText = event.target.innerText;
+            }
+        } else {
+            if(event.target.innerText == '.' && displayPrimary.innerText.includes('.')) return
+            displayPrimary.innerText = displayPrimary.innerText + event.target.innerText;
+        }
 
-    });
-});
+        //operator button code
+        if(event.target.hasAttributes('data-add')) {
+            console.log('pass');
+        }
+    
+        //equals button code
+
+        //clear button code
+
+        //plus-minus button code
+
+        //percent button code
+
+    })
+})
+
+function calculate() {
+
+}
+

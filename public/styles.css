@@ -129,6 +129,7 @@ body {
 
 .screen {
     width: 90%;
+    aspect-ratio: 3.25;
     margin: auto;
     height: auto;
     background-color: black;
@@ -201,8 +202,8 @@ h4 {
 .plus-minus,
 .divide,
 .multiply,
-.subtraction,
-.addition,
+.subtract,
+.add,
 .clear,
 .percent,
 .equals {
